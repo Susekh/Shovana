@@ -23,7 +23,7 @@ export default function StoriesSection() {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-gray-50">
+    <section id='stories' className="py-20 px-6 md:px-12 bg-gray-50">
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-extrabold text-gray-800 mb-6 leading-tight">
           Stories of Hope

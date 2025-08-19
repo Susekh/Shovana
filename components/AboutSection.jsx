@@ -12,7 +12,7 @@ const aboutContent = {
     title: "Our Mission",
     subtitle: "Pioneering the Future with AI-first Innovations",
     description:
-      "We aim to enhance human potential and safety by developing intelligent, reliable, and scalable AI solutions tailored for industries like mining, manufacturing, and logistics.",
+      "We aim to enhance human potential and safety by developing intelligent, reliable, and scalable AI solutions.",
     icon: <Target className="w-10 h-10 text-blue-600" />,
   },
   "Core Values": {
@@ -42,7 +42,7 @@ const AboutUsSection = () => {
   const [selected, setSelected] = useState("Our Mission");
 
   return (
-    <section className="min-h-screen py-20 px-6 bg-blue-50 text-blue-900">
+    <section id="about" className="py-20 px-6 bg-blue-50 text-blue-900">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Intro Card */}
         <div className="bg-blue-600 text-white p-6 rounded-2xl flex flex-col justify-between shadow-md">

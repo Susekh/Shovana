@@ -23,7 +23,7 @@ export default function Highlights() {
   ];
 
   return (
-    <section className="py-20 px-6 md:px-12 bg-white">
+    <section id="programs" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-600 mb-12">
           Our Impact Highlights
