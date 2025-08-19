@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Header() {
     const sections = navItems.map((item) => document.querySelector(item.href));
 
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 100; // offset so it triggers earlier
+      const scrollPos = window.scrollY + 100;
       let current = "";
       sections.forEach((section, index) => {
         if (section && section.offsetTop <= scrollPos) {
@@ -31,7 +32,7 @@ export default function Header() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run on mount
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -40,12 +41,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo Section */}
         <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-lg">S</span>
-          </div>
-          <span className="text-xl text-gray-500 font-semibold">
-            Shovana Charity Foundation
-          </span>
+          <Image
+            src="/favicon.png"
+            alt="Shovana Logo"
+            width={100}
+            height={100}
+            priority
+            className=" w-20 md:w-28"
+          />
         </div>
 
         {/* Desktop Navigation */}

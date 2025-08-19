@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="bg-blue-600 text-white py-40 md:py-20 px-6 md:px-12">
+    <section className="bg-blue-600 text-white py-40 px-6 md:px-12">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-6xl md:text-8xl font-black uppercase tracking-tighter leading-none mb-4">
           Bring Change Home

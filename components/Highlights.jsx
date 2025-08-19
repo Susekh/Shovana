@@ -29,24 +29,27 @@ export default function Highlights() {
           Our Impact Highlights
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           {highlights.map((item, index) => (
             <div
               key={index}
-              className="p-6 border rounded-xl shadow hover:shadow-lg transition-all duration-300 flex flex-col items-center min-h-[420px] max-h-[500px]"
+              className="p-6 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center bg-white"
             >
-              <Image
-                src={item.image}
-                alt={item.title}
-                width={100}
-                height={100}
-                quality={80}
-                className="w-full h-48 object-cover rounded-md mb-5"
-              />
-              <h3 className="text-2xl font-semibold text-blue-700 mb-3">
+              <div className="w-full h-48 relative mb-5">
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  priority={index === 0}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  className="object-cover rounded-md"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
+              </div>
+              <h3 className="text-xl md:text-2xl font-semibold text-blue-700 mb-2">
                 {item.title}
               </h3>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-sm md:text-base">
                 {item.description}
               </p>
             </div>
