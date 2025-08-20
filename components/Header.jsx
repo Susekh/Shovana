@@ -16,18 +16,27 @@ export default function Header() {
     { label: "Contact Us", href: "#contact" },
   ];
 
-  // Scrollspy effect
   useEffect(() => {
-    const sections = navItems.map((item) => document.querySelector(item.href));
-
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 100;
+      const scrollPos = window.scrollY + window.innerHeight / 3;
       let current = "";
-      sections.forEach((section, index) => {
-        if (section && section.offsetTop <= scrollPos) {
-          current = navItems[index].href;
+
+      navItems.forEach(({ href }) => {
+        const section = document.querySelector(href);
+        if (section) {
+          const offsetTop = section.offsetTop;
+          const offsetBottom = offsetTop + section.offsetHeight;
+
+          if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+            current = href;
+          }
         }
       });
+
+      if (window.scrollY < 50) {
+        current = navItems[0].href;
+      }
+
       setActiveSection(current);
     };
 
@@ -44,10 +53,10 @@ export default function Header() {
           <Image
             src="/favicon.png"
             alt="Shovana Logo"
-            width={100}
-            height={100}
+            width={40}
+            height={40}
             priority
-            className=" w-20 md:w-28"
+            className="w-20 md:w-28"
           />
         </div>
 
