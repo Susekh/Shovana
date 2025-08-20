@@ -33,7 +33,7 @@ export default function Highlights() {
           {highlights.map((item) => (
             <div
               key={item.title} // stable key instead of index
-              className="p-6 border rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center bg-white"
+              className="p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col items-center bg-white"
             >
               {/* Reserve aspect-ratio space to prevent CLS */}
               <div

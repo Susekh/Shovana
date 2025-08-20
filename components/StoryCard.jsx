@@ -5,7 +5,7 @@ export default function StoryCard({ name, description, icon }) {
   const LucideIcon = Icons[icon] || Icons.UserRound; 
 
   return (
-    <div className="bg-white border rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden flex flex-col items-center p-6 text-center">
+    <div className="bg-white rounded-lg shadow hover:shadow-lg transition-shadow overflow-hidden flex flex-col items-center p-6 text-center">
       <div className="mb-4 text-blue-600">
         {createElement(LucideIcon, { size: 48 })}
       </div>
