@@ -34,7 +34,7 @@ export default function Header() {
       });
 
       if (window.scrollY < 50) {
-        current = navItems[0].href;
+        current = null;
       }
 
       setActiveSection(current);
